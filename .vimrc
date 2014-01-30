@@ -1,14 +1,20 @@
-set nocompatible              " be iMproved
-filetype off                  " required!
+set nocompatible
+filetype off
 
 set shiftwidth=3
 set tabstop=3
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+syntax on
+colorscheme hemisu
+set background=dark
+
+set guifont=SauceCodePowerline-Regular
 
 " Vundle
 "
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
 Bundle 'gmarik/vundle'
 "
 " Brief help
@@ -35,6 +41,9 @@ imap <C-c> <CR><Esc>O " Will map Ctrl+C whilst still within insert mode to the l
 
 Bundle 'scrooloose/nerdtree'
 map <F2> :NERDTreeToggle<CR> " Toggle NERDTree with F2
+let g:NERDTreeWinPos = "right"
+autocmd VimEnter * NERDTree
+autocmd VimEnter * wincmd p
 
 Bundle 'scrooloose/syntastic'
 " This does what it says on the tin. It will check your file on open too, not just on save.
@@ -51,8 +60,16 @@ set completeopt-=preview
 Bundle 'airblade/vim-gitgutter'
 
 Bundle 'bling/vim-airline'
+let g:airline_powerline_fonts = 1
+set laststatus=2
 
 Bundle 'marijnh/tern_for_vim'
 
 Bundle 'othree/javascript-libraries-syntax.vim'
 let g:used_javascript_libs = 'jquery'
+
+Bundle 'tyok/nerdtree-ack'
+
+Bundle 'mileszs/ack.vim'
+
+Bundle 'tpope/vim-fugitive'

@@ -1,4 +1,4 @@
 vim
 ===
 
-My Vim set-up and configuration.
+My Vim set-up and configuration files.

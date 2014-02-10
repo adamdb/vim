@@ -6,9 +6,10 @@ set tabstop=3
 
 syntax on
 colorscheme hemisu
+set transparency=15
 set background=dark
 
-set guifont=SauceCodePowerline-Regular
+set guifont=SauceCodePowerline-Regular:h13
 
 " Vundle
 "
@@ -41,7 +42,7 @@ imap <C-c> <CR><Esc>O " Will map Ctrl+C whilst still within insert mode to the l
 
 Bundle 'scrooloose/nerdtree'
 map <F2> :NERDTreeToggle<CR> " Toggle NERDTree with F2
-let g:NERDTreeWinPos = "right"
+let g:NERDTreeWinPos = "left"
 autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
 

@@ -1,8 +1,13 @@
 set nocompatible
 filetype off
 
-set shiftwidth=3
-set tabstop=3
+set softtabstop=2
+set shiftwidth=2
+set expandtab
+" add a visual guide line at the 80th column
+" set textwidth=80
+" set colorcolumn=+1
+" hi ColorColumn guibg=#eeeeee ctermbg=246
 
 syntax on
 colorscheme hemisu
@@ -50,6 +55,8 @@ Bundle 'scrooloose/syntastic'
 " This does what it says on the tin. It will check your file on open too, not just on save.
 " You might not want this, so just leave it out if you don't.
 let g:syntastic_check_on_open=1
+" tell syntastic to use gjslint for checking JavaScript's syntax
+let g:syntastic_javascript_checkers = [ 'gjslint' ]
 
 Bundle 'Valloric/YouCompleteMe'
 " These are the tweaks I apply to YCM's config, you don't need them but they might help.

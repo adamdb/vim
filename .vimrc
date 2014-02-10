@@ -57,7 +57,7 @@ Bundle 'scrooloose/syntastic'
 " You might not want this, so just leave it out if you don't.
 let g:syntastic_check_on_open=1
 " tell syntastic to use gjslint for checking JavaScript's syntax
-let g:syntastic_javascript_checkers = [ 'gjslint' ]
+let g:syntastic_javascript_checkers = [ 'gjslint --nojsdoc' ]
 
 Bundle 'Valloric/YouCompleteMe'
 " These are the tweaks I apply to YCM's config, you don't need them but they might help.

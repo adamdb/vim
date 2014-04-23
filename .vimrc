@@ -2,9 +2,12 @@ set nocompatible
 filetype off
 
 set nu
+" set foldcolumn=1
 set softtabstop=2
 set shiftwidth=2
 set expandtab
+set nowrap
+set go+=b
 " add a visual guide line at the 80th column
 " set textwidth=80
 " set colorcolumn=+1
@@ -12,10 +15,15 @@ set expandtab
 
 syntax on
 colorscheme hemisu
-set transparency=15
+" set transparency=15
 set background=dark
 
 set guifont=SauceCodePowerline-Regular:h13
+
+" Key mappings
+"
+" \s    - Replace all instances of the word under the cursor
+:nnoremap <Leader>s :%s/\<<C-r><C-w>\>//g<Left><Left>
 
 " Vundle
 "
@@ -55,9 +63,11 @@ autocmd VimEnter * wincmd p
 Bundle 'scrooloose/syntastic'
 " This does what it says on the tin. It will check your file on open too, not just on save.
 " You might not want this, so just leave it out if you don't.
-let g:syntastic_check_on_open=1
+let g:syntastic_check_on_open = 1
 " tell syntastic to use gjslint for checking JavaScript's syntax
-let g:syntastic_javascript_checkers = [ 'gjslint --nojsdoc' ]
+let g:syntastic_javascript_checkers = ['gjslint --nojsdoc']
+let g:syntastic_error_symbol = '✗'
+let g:syntastic_warning_symbol = '!'
 
 Bundle 'Valloric/YouCompleteMe'
 " These are the tweaks I apply to YCM's config, you don't need them but they might help.
